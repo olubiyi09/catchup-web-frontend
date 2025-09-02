@@ -1,0 +1,52 @@
+.pageTitle {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 38px;
+  margin-bottom: 60px;
+  letter-spacing: 0;
+  color: #0056d2;
+}
+
+.boxesSection {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.dashboardBox {
+  flex: 1;
+  min-width: 200px;
+  padding: 20px;
+  border-left: 3px solid;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.boxIconTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.boxIcon {
+  font-size: 24px;
+}
+
+.boxCount {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.boxChange {
+  color: green;
+  font-size: 14px;
+}
