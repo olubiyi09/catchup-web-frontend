@@ -1,0 +1,71 @@
+.parent {
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #fff;
+  width: 100%;
+}
+
+.parent h2 {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #3d3d3d;
+}
+
+.parent p {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #525252;
+}
+
+.activitiesList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+.activityItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.activityContent h3 {
+  font-family: var(--font-mulish), sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0;
+  color: #1b1b1b;
+  margin-bottom: 0.2rem;
+}
+
+.activityContent p {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0;
+  color: #7a7a7a;
+}

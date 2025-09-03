@@ -5,4 +5,11 @@
   padding-top: 3rem;
   min-height: 100vh;
   padding-left: 2.3rem;
+  margin-left: 20.875rem;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    margin-left: 0;
+  }
 }

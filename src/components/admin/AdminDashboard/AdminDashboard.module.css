@@ -1,26 +1,28 @@
 .pageTitle {
   font-family: var(--font-poppins);
   font-weight: 600;
-  font-size: 30px;
-  line-height: 38px;
-  margin-bottom: 60px;
+  font-size: 1.875rem;
+  line-height: 2.375rem;
+  margin-bottom: 2.5rem;
   letter-spacing: 0;
   color: #0056d2;
 }
 
+/* Boxes Section */
 .boxesSection {
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
 
 .dashboardBox {
   flex: 1;
-  min-width: 200px;
-  padding: 20px;
-  border-left: 3px solid;
+  min-width: 12.5rem;
+  max-width: 15.5rem;
+  padding: 1.25rem;
+  border-left: 0.1875rem solid;
   background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -30,23 +32,292 @@
 .boxIconTitle {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   font-weight: 600;
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  margin-bottom: 0.625rem;
 }
 
 .boxIcon {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .boxCount {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 2.75rem;
+  letter-spacing: -0.02em;
+  color: #3d3d3d;
 }
 
 .boxChange {
-  color: green;
-  font-size: 14px;
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.37rem;
+  letter-spacing: 0;
+  color: #007216;
+}
+
+.boxTitle {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.8rem;
+  line-height: 1.37rem;
+  letter-spacing: 0;
+  color: #525252;
+}
+
+/* Chart + Right Section layout */
+.chartRightContainer {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.chartContainer {
+  flex: 0.67;
+  background-color: #ffffff;
+  padding: 1.8rem 1.2rem;
+  border-radius: 0.5rem;
+  min-width: 300px;
+}
+
+.h2 {
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  vertical-align: middle;
+  margin-bottom: 0.5rem;
+}
+
+.para {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #525252;
+  margin-bottom: 1rem;
+}
+
+.rightSection {
+  flex: 0.35;
+  min-width: 250px;
+  max-width: 300px;
+}
+
+.rightSectionCard {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  color: #3d3d3d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rightSectionCard h2 {
+  margin-bottom: 2.3rem;
+  text-align: center;
+}
+
+.plansContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  column-gap: 1rem;
+  row-gap: 1.5rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.plansCard {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+  font-family: var(--font-inter), sans-serif;
+}
+
+.plansCard h2 {
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #3d3d3d;
+}
+
+.plansCard p {
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #525252;
+}
+
+.plansList {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.planItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #525252;
+}
+
+.revSpan {
+  color: #00a846;
+}
+
+.planValue {
+  font-weight: 600;
+  color: #0056d2;
+}
+.plansLastCard {
+  margin-top: -5rem;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.plansLastCard h2 {
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #3d3d3d;
+}
+
+.plansLastCard p {
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #525252;
+}
+
+.recentActivities {
+  margin-top: 1.6rem;
+}
+
+/* Responsive layout */
+@media (max-width: 1024px) {
+  .plansContainer {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .plansContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .plansCard {
+    width: 100%;
+    /* height: 12.4rem; */
+  }
+}
+
+/* Responsive adjustments */
+/* Tablet */
+@media (max-width: 1024px) {
+  .chartRightContainer {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .chartContainer,
+  .rightSection {
+    flex: 1;
+    max-width: 100%;
+  }
+
+  .rightSection {
+    max-width: 350px;
+  }
+
+  .rightSectionCard {
+    padding: 1rem 0.8rem;
+  }
+
+  .plansLastCard {
+    margin-top: 0.4rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .boxesSection {
+    gap: 0.75rem;
+  }
+
+  .dashboardBox {
+    min-width: 12.5rem;
+    max-width: 15.5rem;
+    padding: 1rem;
+  }
+
+  .chartRightContainer {
+    gap: 1rem;
+  }
+
+  .h2 {
+    font-size: 0.95rem;
+  }
+
+  .para {
+    font-size: 0.7rem;
+    line-height: 1rem;
+  }
+
+  .rightSectionCard h2 {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .rightSectionCard {
+    max-width: 20rem;
+    margin: 0 auto;
+  }
+  .plansLastCard {
+    margin-top: 0.4rem;
+  }
 }
