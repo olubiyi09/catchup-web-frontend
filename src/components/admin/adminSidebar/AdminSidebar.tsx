@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import { FiChevronDown, FiChevronRight, FiMenu, FiX } from "react-icons/fi";
+
 import styles from "./AdminSidebar.module.css";
 import DashboardIcon from "@/components/IconsAndLogo/DashboardIcon";
 import Logo from "@/components/IconsAndLogo/Logo";
@@ -8,7 +10,6 @@ import ContentIcon from "@/components/IconsAndLogo/ContentIcon";
 import SubscriptionIcon from "@/components/IconsAndLogo/SubscriptionIcon";
 import NotificationIcon from "@/components/IconsAndLogo/NotificationIcon";
 import SettingsIcon from "@/components/IconsAndLogo/SettingsIcon";
-import { FiChevronRight, FiChevronDown } from "react-icons/fi";
 
 interface SidebarProps {
   activeTab: string;
@@ -29,14 +30,13 @@ const AdminSidebar: React.FC<SidebarProps> = ({
     { name: "Dashboard", key: "dashboard", icon: DashboardIcon },
     { name: "Students", key: "students", icon: StudentIcon },
     {
-      name: "Content",
+      name: "Content Library",
       key: "content",
       icon: ContentIcon,
-      hasSub: true,
       subItems: [
-        { name: "Exams", key: "content-exams" },
-        { name: "Lessons", key: "content-lessons" },
-        { name: "Practice", key: "content-practice" },
+        { name: "Question Manager", key: "question-manager" },
+        { name: "By Subject", key: "by-subject" },
+        { name: "By Exam Type", key: "by-exam-type" },
       ],
     },
     { name: "Subscription", key: "subscription", icon: SubscriptionIcon },
@@ -46,20 +46,15 @@ const AdminSidebar: React.FC<SidebarProps> = ({
 
   return (
     <>
-      {/* Hamburger toggle (tablet/mobile) */}
-      <div
-        className={`${styles.hamburger} ${open ? styles.active : ""}`}
+      {/* Hamburger - visible on mobile */}
+      {/* Hamburger - visible on mobile */}
+      <button
+        className={styles.hamburger}
         onClick={() => setOpen(!open)}
+        aria-label="Toggle sidebar"
       >
-        <div />
-        <div />
-        <div />
-      </div>
-
-      {/* Overlay when sidebar is open */}
-      {open && (
-        <div className={styles.overlay} onClick={() => setOpen(false)} />
-      )}
+        {open ? <FiX size={24} /> : <FiMenu size={24} />}
+      </button>
 
       {/* Sidebar */}
       <aside className={`${styles.sidebar} ${open ? styles.open : ""}`}>
@@ -70,27 +65,25 @@ const AdminSidebar: React.FC<SidebarProps> = ({
           {menuItems.map((item) => {
             const Icon = item.icon;
 
-            if (item.hasSub) {
+            if (item.subItems) {
               return (
-                <div key={item.key} className={styles.navGroup}>
+                <div key={item.key}>
                   <button
                     className={`${styles.navButton} ${
-                      activeTab === item.key ? styles.active : ""
+                      activeTab.startsWith("content") ? styles.active : ""
                     }`}
                     onClick={() => setContentOpen(!contentOpen)}
                   >
-                    <Icon className="w-5 h-5" />
-                    <p className={styles.navText}>{item.name}</p>
-                    {contentOpen ? (
-                      <FiChevronDown className={styles.arrowIcon} />
-                    ) : (
-                      <FiChevronRight className={styles.arrowIcon} />
-                    )}
+                    <div className="flex items-center gap-3">
+                      <Icon className="w-5 h-5" />
+                      <p className={styles.navText}>{item.name}</p>
+                    </div>
+                    {contentOpen ? <FiChevronDown /> : <FiChevronRight />}
                   </button>
 
                   {contentOpen && (
-                    <div className={styles.subMenu}>
-                      {item.subItems?.map((sub) => (
+                    <div className={styles.subNav}>
+                      {item.subItems.map((sub) => (
                         <button
                           key={sub.key}
                           onClick={() => {
@@ -98,7 +91,7 @@ const AdminSidebar: React.FC<SidebarProps> = ({
                             setOpen(false);
                           }}
                           className={`${styles.subNavButton} ${
-                            activeTab === sub.key ? styles.active : ""
+                            activeTab === sub.key ? styles.subItemsActive : ""
                           }`}
                         >
                           {sub.name}
